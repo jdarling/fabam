@@ -9,7 +9,7 @@ Fabam is not a process manager like PM2, Forever, or similar.  It is not a sched
 
 Fabam takes a slight twist in that it assigns process groups a name.  Each of these named groups can have a different scheduler assigned to it, and that scheduler is used to distribute the work.
 
-Fabam can take care of starting and stopping local resources, and hopefully in the future starting and stopping remote resources (via SSH2).
+Fabam can take care of starting and stopping local workers, and hopefully in the future starting and stopping remote workers (via SSH2).
 
 ##Install
 
@@ -55,7 +55,16 @@ You can always write your own if you don't like any of the ones provided.  See e
 
  * Cleanup, refactor, whatever you want to call it.
  * Add in remote workers, then more cleanup, refactor, ...
+  * Websockets?
+  * TCP?
+  * UDP?
+  * No clue yet, will know when I get there.
  * Add in SSH launcher for remote workers, then more cleanup, refactor, ...
+ * Add in ability to "push" scripts to remote workers
+  * Push single worker files?
+  * Npm packages?
+  * Install from Git repos?
+  * Maybe support archives (would love to support [Zstandard](https://code.facebook.com/posts/1658392934479273/smaller-and-faster-data-compression-with-zstandard/) from Facebook)
 
 #I found a bug!
 
