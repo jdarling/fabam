@@ -1,9 +1,7 @@
-Fabam
+![Coffee Bean Logo](./logo/coffee-grains_32.png) Fabam
 ===
 
 **Fabam is very early on in its development, use at your own risk!**
-
-![Coffee Bean Logo](./logo/coffee-grains_32.png)
 
 Process Scheduler/Manager for Node.js sub-processes.  Supports local (via IPC) processes and (in the future) remote workers.
 
