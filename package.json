@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "lab",
+    "documentation": "rm -rf docs/; jsdoc lib -r -c ./jsdoc.json -t jaguarjs-jsdoc -d docs --readme jsdocreadme.md",
     "dev": "nodemon examples/basic/master"
   },
   "author": "Jeremy Darling <jeremy.darling@gmail.com>",
@@ -19,6 +20,7 @@
   },
   "devDependencies": {
     "code": "^4.0.0",
+    "jsdoc": "^3.4.1",
     "lab": "^11.0.1"
   },
   "directories": {

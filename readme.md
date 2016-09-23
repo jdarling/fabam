@@ -11,47 +11,47 @@ Fabam takes a slight twist in that it assigns process groups a name.  Each of th
 
 Fabam can take care of starting and stopping local workers, and hopefully in the future starting and stopping remote workers (via SSH2).
 
-##Install
+## Install
 
 ```
 npm install --save fabam
 ```
 
-##Usage
+## Usage
 
 For now see master.js and child.js in the examples/basic/ folder.  More info will be added as this library matures.
 
-##Schedulers
+## Schedulers
 
-###Random
+### Random
 
 Probably the worst idea ever, but its quick and easy to implement.  Gives a fair starting point of what it takes to write a minimal scheduler.
 
 **NOTE:** Doesn't keep track of if workers are in use or not, will keep pushing work to a worker even if it is busy.
 
-###Round-robin
+### Round-robin
 
 Starts at worker 0, sends a task, moves to worker 1, sends a task.  Keep going to worker (n), then start over at worker 0 again.
 
 **NOTE:** Doesn't keep track of if workers are in use or not, will keep pushing work to a worker even if it is busy.
 
-###First Available
+### First Available
 
 Pick a worker, remove it from the queue, send it work.  When the worker is complete (either by callback or by ready signal) then put the worker back on the end of the queue.  Attempts to give workers the most time to breathe between jobs.
 
 **NOTE:** Keeps track if workers are busy, if they are will queue up work until a worker becomes available.
 
-###Work-conserving
+### Work-conserving
 
 Pick a worker, remove it from the queue, send it work.  When the worker is complete (either by callback or by ready signal) then put the worker back on the front of the queue.  Attempts to always keep workers busy, favoring "warmed up" workers over idle ones.
 
 **NOTE:** Keeps track if workers are busy, if they are will queue up work until a worker becomes available.
 
-###BYOS (Bring Your Own Scheduler)
+### BYOS (Bring Your Own Scheduler)
 
 You can always write your own if you don't like any of the ones provided.  See existing workers for ideas on how to implement your own.
 
-#Plans
+## Plans
 
  * Cleanup, refactor, whatever you want to call it.
  * Add in remote workers, then more cleanup, refactor, ...
@@ -66,19 +66,19 @@ You can always write your own if you don't like any of the ones provided.  See e
   * Install from Git repos?
   * Maybe support archives (would love to support [Zstandard](https://code.facebook.com/posts/1658392934479273/smaller-and-faster-data-compression-with-zstandard/) from Facebook)
 
-#I found a bug!
+## I found a bug!
 
 Great, fix it and submit a pull request.
 
-#I wrote {insert great feature here}!
+## I wrote {insert great feature here}!
 
 Great, submit a pull request.
 
-#Help, support, etc?
+## Help, support, etc?
 
 That's what the issues tab above is for, use it.  Don't be surprised if I ask for an example and/or a pull request.
 
-#Why Deregistered?
+## Why Deregistered?
 
 Honestly, this was so well answered on StackExchange http://english.stackexchange.com/a/40095/197643
 
@@ -107,7 +107,7 @@ Here it is in its full glory, in case you think that link is clickbait:
 >
 > -- Shane
 
-###Attributions
+### Attributions
 
 Built using:
 
@@ -118,9 +118,9 @@ Built using:
 
 Icons used as Logo made by [Freepik](http://www.freepik.com) from [http://www.flaticon.com](http://www.flaticon.com) is licensed by [Creative Commons BY 3.0](http://creativecommons.org/licenses/by/3.0/) and can be found at http://www.flaticon.com/free-icon/coffee-grains_47408
 
-#License - [DBAD](http://www.dbad-license.org/)
+## License - [DBAD](http://www.dbad-license.org/)
 
-##DON'T BE A DICK PUBLIC LICENSE
+## DON'T BE A DICK PUBLIC LICENSE
 
 Copyright(C) 2016 [Jeremy Darling](jeremy.darling@gmail.com)
 
