@@ -51,6 +51,24 @@ Pick a worker, remove it from the queue, send it work.  When the worker is compl
 
 You can always write your own if you don't like any of the ones provided.  See existing workers for ideas on how to implement your own.
 
+#Plans
+
+ * Cleanup, refactor, whatever you want to call it.
+ * Add in remote workers, then more cleanup, refactor, ...
+ * Add in SSH launcher for remote workers, then more cleanup, refactor, ...
+
+#I found a bug!
+
+Great, fix it and submit a pull request.
+
+#I wrote <insert great feature here>!
+
+Great, submit a pull request.
+
+#Help, support, etc?
+
+That's what the issues tab above is for, use it.  Don't be surprised if I ask for an example and/or a pull request.
+
 #Why Deregistered?
 
 Honestly, this was so well answered on StackExchange http://english.stackexchange.com/a/40095/197643
