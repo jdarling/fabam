@@ -1,6 +1,8 @@
 ![Coffee Bean Logo](./logo/coffee-grains_32.png) Fabam
 ===
 
+[JSDoc generated documentation at https://rawgit.com/jdarling/fabam/master/docs/index.html](https://rawgit.com/jdarling/fabam/master/docs/index.html)
+
 **Fabam is very early on in its development, use at your own risk!**
 
 Process Scheduler/Manager for Node.js sub-processes.  Supports local (via IPC) processes and (in the future) remote workers.
