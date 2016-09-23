@@ -82,6 +82,8 @@ Here it is in its full glory, in case you think that link is clickbait:
 
 ###Attributions
 
+Built using:
+
  * EventEmitter2 - https://github.com/asyncly/EventEmitter2 - Event filter
  * Async - http://caolan.github.io/async/ - Misc usage for control flow
  * SSH2 - https://github.com/mscdex/ssh2 - Start and stop remote workers
