@@ -61,7 +61,7 @@ You can always write your own if you don't like any of the ones provided.  See e
 
 Great, fix it and submit a pull request.
 
-#I wrote <insert great feature here>!
+#I wrote {insert great feature here}!
 
 Great, submit a pull request.
 
