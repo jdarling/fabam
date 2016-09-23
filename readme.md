@@ -82,10 +82,10 @@ Here it is in its full glory, in case you think that link is clickbait:
 
 ###Attributions
 
-EventEmitter2 - https://github.com/asyncly/EventEmitter2 - Event filter
-Async - http://caolan.github.io/async/ - Misc usage for control flow
-SSH2 - https://github.com/mscdex/ssh2 - Start and stop remote workers
-Node-UUID - https://github.com/broofa/node-uuid - Used to generate unique ID's for callback's
+ * EventEmitter2 - https://github.com/asyncly/EventEmitter2 - Event filter
+ * Async - http://caolan.github.io/async/ - Misc usage for control flow
+ * SSH2 - https://github.com/mscdex/ssh2 - Start and stop remote workers
+ * Node-UUID - https://github.com/broofa/node-uuid - Used to generate unique ID's for callback's
 
 Icons used as Logo made by [Freepik](http://www.freepik.com) from [http://www.flaticon.com](http://www.flaticon.com) is licensed by [Creative Commons BY 3.0](http://creativecommons.org/licenses/by/3.0/) and can be found at http://www.flaticon.com/free-icon/coffee-grains_47408
 
