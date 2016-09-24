@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>Class: Worker</title>
+    <title>Class: Base</title>
     
     
     <script src="scripts/prettify/prettify.js"></script>
@@ -401,7 +401,7 @@
     </ul>
 </div>
     <div class="main">
-        <h1 class="page-title" data-filename="Worker.html">Class: Worker</h1>
+        <h1 class="page-title" data-filename="Transports.Base.html">Class: Base</h1>
         
 
 
@@ -410,10 +410,10 @@
     
 <header>
     <h2>
-    Worker
+    Base
     </h2>
     
-        <div class="class-description"><p>Base class to derrive workers from</p></div>
+        <div class="class-description"><p>Class representing the basics needed for a protocol</p></div>
     
 </header>  
 
@@ -425,14 +425,14 @@
         
 <dt>
     <div class="nameContainer">
-        <h4 class="name" id="Worker">
+        <h4 class="name" id="Base">
             
-            new Worker<span class="signature">()</span>
+            new Transports.Base<span class="signature">(options)</span>
         </h4>
     
         
         <div class="tag-source">
-            worker.js, line 17
+            transports/base.js, line 6
         </div>
         
     </div>
@@ -443,7 +443,7 @@
     
     
     <div class="description">
-        <p>Create an instance</p>
+        <p>Create an instance of the Protocol</p>
     </div>
     
 
@@ -451,6 +451,119 @@
     
     
     
+    
+        
+
+<table class="params">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>options</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">object</span>
+
+
+            
+            </td>
+            
+            
+            
+            <td class="description last">
+                
+                <p>The options passed in to the instance</p>
+                
+
+<table class="params">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>manager</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type"><a href="Manager.html">Manager</a></span>
+
+
+            
+            </td>
+            
+            
+            
+            <td class="description last">
+                
+                <p>The manager assigned to the protocol</p></td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>scheduler</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type"><a href="Manager.html">Manager</a></span>
+
+
+            
+            </td>
+            
+            
+            
+            <td class="description last">
+                
+                <p>Optional scheduler to create workers for.</p></td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+            </td>
+        </tr>
+	
+	
+	</tbody>
+</table>
     
     
     
@@ -489,26 +602,6 @@
     
     
     
-    
-        <h5>Example</h5>
-        
-        <p class="code-caption">Simple worker that prepends "echo: " to whatever it is sent and then sends it back to the manager</p>
-    
-
-    
-    <pre class="prettyprint"><code>const {
-  Worker
-} = require('fabam');
-
-const worker = new Worker();
-
-worker.on('echo', (what, callback)=>{
-  callback(`echo: ${what}`);
-});
-
-worker.ready();</code></pre>
-    
-
     
 </dd>
 
@@ -534,14 +627,14 @@ worker.ready();</code></pre>
             
 <dt>
     <div class="nameContainer">
-        <h4 class="name" id="emit">
+        <h4 class="name" id="getInstance">
             
-            emit<span class="signature">(event, data)</span>
+            getInstance<span class="signature">(options, callback)</span>
         </h4>
     
         
         <div class="tag-source">
-            worker.js, line 32
+            transports/base.js, line 41
         </div>
         
     </div>
@@ -552,7 +645,7 @@ worker.ready();</code></pre>
     
     
     <div class="description">
-        <p>Send a message back to the manager</p>
+        <p>Create a new worker instance and register it with the manager and scheduler.</p>
     </div>
     
 
@@ -583,13 +676,13 @@ worker.ready();</code></pre>
 	
         <tr>
             
-                <td class="name"><code>event</code></td>
+                <td class="name"><code>options</code></td>
             
             
             <td class="type">
             
                 
-<span class="param-type">string</span>
+<span class="param-type">object</span>
 
 
             
@@ -599,20 +692,66 @@ worker.ready();</code></pre>
             
             <td class="description last">
                 
-                <p>Name of the event to send back</p></td>
+                <p>Options</p>
+                
+
+<table class="params">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>scheduler</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">Scheduler</span>
+
+
+            
+            </td>
+            
+            
+            
+            <td class="description last">
+                
+                <p>Optional scheduler to register worker with,
+if not supplied then class options.scheduler will be used.</p></td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+            </td>
         </tr>
 	
 	
 	
         <tr>
             
-                <td class="name"><code>data</code></td>
+                <td class="name"><code>callback</code></td>
             
             
             <td class="type">
             
                 
-<span class="param-type">any</span>
+<span class="param-type">function</span>
 
 
             
@@ -622,7 +761,7 @@ worker.ready();</code></pre>
             
             <td class="description last">
                 
-                <p>What data to send back</p></td>
+                <p>Callback to be called once worker is created and registered.</p></td>
         </tr>
 	
 	
@@ -673,14 +812,14 @@ worker.ready();</code></pre>
             
 <dt>
     <div class="nameContainer">
-        <h4 class="name" id="on">
+        <h4 class="name" id="registerInstance">
             
-            on<span class="signature">(event, handler)</span>
+            registerInstance<span class="signature">(instance, scheduler)</span>
         </h4>
     
         
         <div class="tag-source">
-            worker.js, line 48
+            transports/base.js, line 23
         </div>
         
     </div>
@@ -691,7 +830,7 @@ worker.ready();</code></pre>
     
     
     <div class="description">
-        <p>Setup a listener for an event.  Called every time the worker gets the event.</p>
+        <p>Register a worker instance with the manager and scheduler</p>
     </div>
     
 
@@ -722,13 +861,13 @@ worker.ready();</code></pre>
 	
         <tr>
             
-                <td class="name"><code>event</code></td>
+                <td class="name"><code>instance</code></td>
             
             
             <td class="type">
             
                 
-<span class="param-type">string</span>
+<span class="param-type">object</span>
 
 
             
@@ -738,20 +877,20 @@ worker.ready();</code></pre>
             
             <td class="description last">
                 
-                <p>What even to listen for</p></td>
+                <p>The instance to register</p></td>
         </tr>
 	
 	
 	
         <tr>
             
-                <td class="name"><code>handler</code></td>
+                <td class="name"><code>scheduler</code></td>
             
             
             <td class="type">
             
                 
-<span class="param-type">function</span>
+<span class="param-type">Scheduler</span>
 
 
             
@@ -761,290 +900,13 @@ worker.ready();</code></pre>
             
             <td class="description last">
                 
-                <p>function(data, done) handler for the event</p>
-                
-
-<table class="params">
-    <thead>
-	<tr>
-		
-		<th>Name</th>
-		
-		
-		<th>Type</th>
-		
-		
-		
-		<th class="last">Description</th>
-	</tr>
-	</thead>
-	
-	<tbody>
-	
-	
-        <tr>
-            
-                <td class="name"><code>data</code></td>
-            
-            
-            <td class="type">
-            
-                
-<span class="param-type">any</span>
-
-
-            
-            </td>
-            
-            
-            
-            <td class="description last">
-                
-                <p>Data to be processed</p></td>
-        </tr>
-	
-	
-	
-        <tr>
-            
-                <td class="name"><code>done</code></td>
-            
-            
-            <td class="type">
-            
-                
-<span class="param-type">function</span>
-
-
-            
-            </td>
-            
-            
-            
-            <td class="description last">
-                
-                <p>Function to return results to the manager</p></td>
+                <p>Optional scheduler to register worker with,
+if not supplied then class options.scheduler will be used.</p></td>
         </tr>
 	
 	
 	</tbody>
 </table>
-            </td>
-        </tr>
-	
-	
-	</tbody>
-</table>
-    
-    
-    
-<dl class="details">
-    
-        
-    
-    
-    
-
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-</dl>
-
-    
-    
-
-    
-
-    
-    
-    
-    
-    
-    
-    
-</dd>
-
-        
-            
-<dt>
-    <div class="nameContainer">
-        <h4 class="name" id="once">
-            
-            once<span class="signature">(event, handler)</span>
-        </h4>
-    
-        
-        <div class="tag-source">
-            worker.js, line 61
-        </div>
-        
-    </div>
-
-    
-</dt>
-<dd>
-    
-    
-    <div class="description">
-        <p>Setup a listener for an event.  Called only once, then removed.</p>
-    </div>
-    
-
-    
-    
-    
-    
-    
-        
-
-<table class="params">
-    <thead>
-	<tr>
-		
-		<th>Name</th>
-		
-		
-		<th>Type</th>
-		
-		
-		
-		<th class="last">Description</th>
-	</tr>
-	</thead>
-	
-	<tbody>
-	
-	
-        <tr>
-            
-                <td class="name"><code>event</code></td>
-            
-            
-            <td class="type">
-            
-                
-<span class="param-type">string</span>
-
-
-            
-            </td>
-            
-            
-            
-            <td class="description last">
-                
-                <p>What even to listen for</p></td>
-        </tr>
-	
-	
-	
-        <tr>
-            
-                <td class="name"><code>handler</code></td>
-            
-            
-            <td class="type">
-            
-                
-<span class="param-type">function</span>
-
-
-            
-            </td>
-            
-            
-            
-            <td class="description last">
-                
-                <p>function(data) handler for the event</p></td>
-        </tr>
-	
-	
-	</tbody>
-</table>
-    
-    
-    
-<dl class="details">
-    
-        
-    
-    
-    
-
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-</dl>
-
-    
-    
-
-    
-
-    
-    
-    
-    
-    
-    
-    
-</dd>
-
-        
-            
-<dt>
-    <div class="nameContainer">
-        <h4 class="name" id="ready">
-            
-            ready<span class="signature">()</span>
-        </h4>
-    
-        
-        <div class="tag-source">
-            worker.js, line 38
-        </div>
-        
-    </div>
-
-    
-</dt>
-<dd>
-    
-    
-    <div class="description">
-        <p>Let the manager know we are ready for work</p>
-    </div>
-    
-
-    
-    
-    
-    
     
     
     
