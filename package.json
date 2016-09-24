@@ -1,6 +1,6 @@
 {
   "name": "fabam",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Process Scheduler/Manager for Node.js sub-processes.  Supports local (via IPC) processes and (in the future) remote workers.",
   "main": "index.js",
   "scripts": {
